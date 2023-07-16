@@ -44,7 +44,7 @@ class AuthController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('posts.index');
+            return redirect()->route('home.index');
         }
 
         return back()->with('error','Email dan Password tidak cocok');
@@ -54,6 +54,6 @@ class AuthController extends Controller
     {
         Auth::logout();
 
-        return redirect()->route('posts.index');
+        return redirect()->route('home.index');
     }
 }
